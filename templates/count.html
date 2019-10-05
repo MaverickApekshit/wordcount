@@ -12,5 +12,17 @@
 
 	<h3>There are {{count}} worlds in your text</h3>
 
+	<h2>Word Count:</h2>
+
+	<table border="1">
+		
+		{% for word, counttotal in worddictionary %}
+			<tr>
+				<td>{{ word }}</td>
+				<td>{{ counttotal }}</td>
+			</tr>
+		{% endfor %}
+	</table>
+
 </body>
 </html>
