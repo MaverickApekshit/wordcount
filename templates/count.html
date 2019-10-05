@@ -6,6 +6,8 @@
 <body>
 	<h1>Count</h1>
 
+	<a href="{% url 'home' %}">Start Over</a>
+
 	<h2>Your Text:</h2>
 
 	<p>{{fulltext}}</p>
@@ -16,7 +18,7 @@
 
 	<table border="1">
 		
-		{% for word, counttotal in worddictionary %}
+		{% for word, counttotal in sortedwords %}
 			<tr>
 				<td>{{ word }}</td>
 				<td>{{ counttotal }}</td>

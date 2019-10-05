@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+import operator
 
 
 def home(request):
@@ -20,6 +21,6 @@ def count(request):
 			#add word to dictionary
 			worddictionary[word] = 1
 
-	sorted(worddictionary.items())
+	sortedwords = sorted(worddictionary.items(), key=operator.itemgetter(1), reverse=True)
 
-	return render(request, 'count.html', {'fulltext':fulltext, 'count':len(wordlist), 'worddictionary':worddictionary.items()})
+	return render(request, 'count.html', {'fulltext':fulltext, 'count':len(wordlist), 'sortedwords':sortedwords})
